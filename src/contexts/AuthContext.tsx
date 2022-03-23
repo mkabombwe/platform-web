@@ -100,7 +100,7 @@ function AuthProvider({ children }: ChildrenInterface) {
 				email,
 				role: 'user',
 				about: '',
-				coverURL: 'profilecovers/default.jpg'
+				coverURL: 'coverimages/default.jpg'
 			})
 		})
 
@@ -114,7 +114,7 @@ function AuthProvider({ children }: ChildrenInterface) {
 			value={{
 				...state,
 				user: {
-					id: state?.user?.uid,
+					uid: state?.user?.uid,
 					email: state?.user?.email,
 					displayName: state?.user?.displayName,
 					photoURL: state?.user?.photoURL,

@@ -1,12 +1,14 @@
-import { ColorScheme, ColorSchemeProvider, Global,MantineProvider } from '@mantine/core'
+import { ColorScheme, ColorSchemeProvider, Global, MantineProvider } from '@mantine/core'
 import { useMemo } from 'react'
 
 // Hooks
 import useSettings from '../hooks/useSettings'
 // Interfaces
 import ChildrenInterface from '../interfaces/children'
+import breakpoints from './breakpoints'
 //
 import palette from './palette'
+import spacing from './spacing'
 
 export default function ThemeProvider({ children }: ChildrenInterface) {
 	const { themeMode, onToggleMode } = useSettings()
@@ -15,7 +17,10 @@ export default function ThemeProvider({ children }: ChildrenInterface) {
 		() => ({
 			colorScheme: themeMode as ColorScheme,
 			colors: palette,
-			primaryColor: 'brand'
+			primaryColor: 'brand',
+			defaultRadius: 24,
+			breakpoints,
+			spacing
 		}),
 		[themeMode]
 	)

@@ -1,4 +1,4 @@
-import { Avatar, Box, Button,Card, Divider, Image, Text } from '@mantine/core'
+import { Avatar, Box, Button, Card, Divider, Image, Text } from '@mantine/core'
 import { getDownloadURL, ref } from 'firebase/storage'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -33,7 +33,6 @@ export default function HomeUserCardWidget() {
 					const coverURL = user?.coverURL as string
 					const url = await getDownloadURL(ref(STORAGE, coverURL))
 					setCoverImage(url)
-					console.log(url)
 				} catch (error) {
 					console.error(error)
 				}
@@ -45,7 +44,6 @@ export default function HomeUserCardWidget() {
 	return (
 		<Card
 			shadow='sm'
-			p='lg'
 			sx={{
 				width: '100%',
 				display: 'flex',

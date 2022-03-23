@@ -6,8 +6,10 @@ import {
 	Group,
 	Header,
 	MediaQuery,
-	useMantineColorScheme
+	useMantineColorScheme,
+	useMantineTheme
 } from '@mantine/core'
+import Iconify from '../../../components/Iconify'
 
 const useStyles = createStyles((theme) => ({
 	header: {
@@ -24,17 +26,18 @@ const useStyles = createStyles((theme) => ({
 
 export default function NavigationHeader({ open, setOpen }: { open: boolean; setOpen: Function }) {
 	const { toggleColorScheme } = useMantineColorScheme()
+	const theme = useMantineTheme()
 	const { classes } = useStyles()
 
 	return (
 		<Header height={80} p='md' className={classes.header}>
-			<MediaQuery largerThan='sm' styles={{ display: 'none' }}>
+			<MediaQuery largerThan='md' styles={{ display: 'none' }}>
 				<Burger
 					opened={open}
 					onClick={() => setOpen((o: boolean) => !o)}
 					size='sm'
 					color='white'
-					mr='xl'
+					mr='md'
 				/>
 			</MediaQuery>
 
@@ -42,7 +45,16 @@ export default function NavigationHeader({ open, setOpen }: { open: boolean; set
 				<h1>Platform</h1>
 				<Group>
 					<Avatar src={null} alt='user' radius='xl' className={classes.avatar}></Avatar>
-					<ActionIcon onClick={() => toggleColorScheme()}>D</ActionIcon>
+					<ActionIcon onClick={() => toggleColorScheme()} size='lg' variant='filled' radius='lg'>
+						<Iconify
+							icon={
+								theme.colorScheme === 'dark'
+									? 'fluent:lightbulb-filament-24-filled'
+									: 'fluent:lightbulb-20-regular'
+							}
+							color='white'
+						/>
+					</ActionIcon>
 				</Group>
 			</Group>
 		</Header>
