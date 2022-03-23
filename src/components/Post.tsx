@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
 import { Avatar, Box, Card, Group, Text } from '@mantine/core'
 import { DocumentData } from 'firebase/firestore'
 import { getDownloadURL, ref } from 'firebase/storage'
+import { useEffect, useState } from 'react'
+
 import { STORAGE } from '../utils/config'
 import { fToNow } from '../utils/formatTime'
 

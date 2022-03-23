@@ -9,6 +9,7 @@ import {
 	useMantineColorScheme,
 	useMantineTheme
 } from '@mantine/core'
+
 import Iconify from '../../../components/Iconify'
 
 const useStyles = createStyles((theme) => ({

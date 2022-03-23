@@ -1,6 +1,7 @@
 import { Button, Card, Group, Textarea } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+
 import useAuth from '../hooks/useAuth'
 import { DB } from '../utils/config'
 
