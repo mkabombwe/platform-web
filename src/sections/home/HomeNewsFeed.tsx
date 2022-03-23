@@ -1,5 +1,5 @@
 import { Group } from '@mantine/core'
-import { collection, DocumentData, onSnapshot, orderBy,query } from 'firebase/firestore'
+import { collection, DocumentData, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
 import Post from '../../components/Post'
